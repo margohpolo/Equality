@@ -23,12 +23,12 @@ namespace Equality.Domain.ValueObjects
             Country = country;
         }
 
-        public override string ToString()
-            => "\n        Address - \n"
-                + $"        AddressLine1: {AddressLine1}"
-                + ((String.IsNullOrEmpty(AddressLine2)) ? null : $"\n        AddressLine2: {AddressLine2}")
-                + ((String.IsNullOrEmpty(AddressLine3)) ? null : $"\n        AddressLine3: {AddressLine3}")
-                + $"\n        PostalCode: {PostalCode}"
-                + $"\n        Country: {Country}";
+        //public override string ToString()
+        //    => "\n        Address - \n"
+        //        + $"        AddressLine1: {AddressLine1}"
+        //        + ((String.IsNullOrEmpty(AddressLine2)) ? null : $"\n        AddressLine2: {AddressLine2}")
+        //        + ((String.IsNullOrEmpty(AddressLine3)) ? null : $"\n        AddressLine3: {AddressLine3}")
+        //        + $"\n        PostalCode: {PostalCode}"
+        //        + $"\n        Country: {Country}";
     }
 }

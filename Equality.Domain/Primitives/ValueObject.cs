@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using System.Text;
 
 namespace Equality.Domain.Primitives
 {
@@ -7,7 +8,7 @@ namespace Equality.Domain.Primitives
     {
         //***Note: For demo purposes only. Not a good idea to expose too much PII in logs.
         public override string ToString()
-            => GetAtomicValues().ToString()!;
+            => PrintAtomicValues();
 
         public bool Equals(ValueObject<T>? t)
             => (t is not null || this.GetType() != t!.GetType())
@@ -47,5 +48,31 @@ namespace Equality.Domain.Primitives
                 yield return property.GetValue(this)!;
             }
         }
+
+        private string PrintAtomicValues()
+        {
+            StringBuilder sb = new();
+
+            sb.AppendLine($"\n Type: {typeof(T)}");
+
+            foreach (PropertyInfo property in typeof(T).GetProperties())
+            {
+                Object? obj = property.GetValue(this);
+
+                if (obj is not null)
+                {
+                    //TODO: Can this be cleaner?
+                    if (obj is string strObj && String.IsNullOrEmpty(strObj))
+                    {
+                        continue;
+                    }
+                    sb.AppendLine(APPEND_8_SPACES + property.Name + ": " + obj.ToString());
+                }
+            }
+
+            return sb.ToString();
+        }
+
+        private const string APPEND_8_SPACES = "    ";
     }
 }

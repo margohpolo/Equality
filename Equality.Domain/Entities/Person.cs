@@ -36,27 +36,29 @@ namespace Equality.Domain.Entities
         public string Occupation { get; private set; } = occupation;
         public Money CreditLimit { get; private set; } = creditLimit ?? (annualIncome * CalculationConstants.CreditLimitMultiple);
 
-        //***Note: For demo purposes only. Not a good idea to expose too much PII in logs.
-        public override string ToString()
-            => $"Person -"
-                + $"\n Id: {Id}"
-                + $"\n | Name: {Name}"
-                + $"\n | Email: {Email}"
-                + $"\n | Nationality: {Nationality}"
-                + $"\n | CountryOfBirth: {CountryOfBirth}"
-                + $"\n | DateOfBirth: {DateOfBirth}"
-                + $"\n | PrimaryAddress: {PrimaryAddress}"
-                + ( (SecondaryAddress is null) 
-                    ? null 
-                    : $"\n | SecondaryAddress: {SecondaryAddress}" )
-                + $"\n | MaritalStatus: {MaritalStatus}"
-                + $"\n | AnnualIncome: {AnnualIncome}"
-                + $"\n | HighestQualification: {HighestQualification}"
-                + $"\n | CreditLimit: {CreditLimit}"
-                + $"\n | PrimaryPhoneNumber: {PrimaryPhoneNumber}"
-                + ( (SecondaryPhoneNumber is null) 
-                    ? null 
-                    : $"\n | SecondaryPhoneNumber: {SecondaryPhoneNumber}" )
-                + "\n -------------------------------------------------------- \n";
+
+
+        ////***Note: For demo purposes only. Not a good idea to expose too much PII in logs.
+        //public override string ToString()
+        //    => $"Person -"
+        //        + $"\n Id: {Id}"
+        //        + $"\n | Name: {Name}"
+        //        + $"\n | Email: {Email}"
+        //        + $"\n | Nationality: {Nationality}"
+        //        + $"\n | CountryOfBirth: {CountryOfBirth}"
+        //        + $"\n | DateOfBirth: {DateOfBirth}"
+        //        + $"\n | PrimaryAddress: {PrimaryAddress}"
+        //        + ( (SecondaryAddress is null) 
+        //            ? null 
+        //            : $"\n | SecondaryAddress: {SecondaryAddress}" )
+        //        + $"\n | MaritalStatus: {MaritalStatus}"
+        //        + $"\n | AnnualIncome: {AnnualIncome}"
+        //        + $"\n | HighestQualification: {HighestQualification}"
+        //        + $"\n | CreditLimit: {CreditLimit}"
+        //        + $"\n | PrimaryPhoneNumber: {PrimaryPhoneNumber}"
+        //        + ( (SecondaryPhoneNumber is null) 
+        //            ? null 
+        //            : $"\n | SecondaryPhoneNumber: {SecondaryPhoneNumber}" )
+        //        + "\n -------------------------------------------------------- \n";
     }
 }
