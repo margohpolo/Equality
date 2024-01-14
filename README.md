@@ -18,7 +18,7 @@ An assumption was made here that Entities will behave similarly to ValueObjects,
 
 ### GetProperties()
 
-Reflection was used to iteratively get the property values, for the equality checks. (see <a target="_blank" href="Equality.Domain/Primitives/ValueObject.cs">here</a>.)
+Reflection was used to iteratively get the property values, for the equality checks. (see <a href="Equality.Domain/Primitives/ValueObject.cs" target="_blank">here</a>.)
 
 
 
@@ -26,4 +26,4 @@ Reflection was used to iteratively get the property values, for the equality che
 <br />
 <br />
 <br />
-Credits go to <a target="_blank" href="https://www.youtube.com/@MilanJovanovicTech">Milan</a> for his tutorial on ValueObjects, as well as for the cool name `GetAtomicValues()`.
+Credits go to <a href="https://www.youtube.com/@MilanJovanovicTech" target="_blank">Milan</a> for his tutorial on ValueObjects, as well as for the cool name `GetAtomicValues()`.
