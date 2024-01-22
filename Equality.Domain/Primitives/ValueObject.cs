@@ -38,8 +38,9 @@ namespace Equality.Domain.Primitives
         //}
 
         private bool ValuesAreEqual(ValueObject<T> other)
-            => GetAtomicValues()
-                .SequenceEqual(other.GetAtomicValues());
+            // => GetAtomicValues()
+            //     .SequenceEqual(other.GetAtomicValues());
+            => GetHashCode().Equals(other.GetHashCode());
 
         private IEnumerable<object?> GetAtomicValues()
         {
